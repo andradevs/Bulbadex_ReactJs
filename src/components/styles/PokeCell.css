@@ -1,0 +1,35 @@
+.pokemon{
+    background-color: #5e5e5eb2;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pokemon .pokeBox{
+    background-color: #f0f0f0;
+    margin: 10px 10px 0px;
+    width:  110px;
+    height: 110px;
+}
+
+.pokeBox img{
+    height: 100%;
+    widows: 100%;
+}
+
+.pokemon span{
+    margin:0px;
+    width: 100px;
+}
+
+.pokemon {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 12px;
+    -webkit-font-smoothing: none;
+    font-family: 'pokemon-font', monospace;
+}

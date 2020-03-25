@@ -1,0 +1,65 @@
+@import url('//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: #f00000;
+}
+
+::placeholder {
+    color: #f0f0f0cc;
+}
+
+header .title {
+    text-align: center;
+    grid-column-start: 2;
+}
+
+.title a{
+    text-decoration: none;
+}
+
+.title span{
+    font-family: "Pokemon", monospace;
+    font-size: 2.5rem;
+    color: #FFCB05;
+    text-shadow:3px 3px #3D7DCA;
+    letter-spacing: 2pt;
+}
+
+header .search-bar {
+    text-align: center;
+    grid-column-start: 2;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: larger;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.search-bar input:focus {
+    outline-offset: 0px;
+    outline: none;
+}
+
+.search-bar button {
+    color: #f0f0f0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:focus {
+    outline: none;
+}
+
+.search-bar button i {
+    font-size: larger;
+}
