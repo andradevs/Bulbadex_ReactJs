@@ -11,8 +11,8 @@ export default class PokeList extends Component {
         super();
         this.state = {
             results: [],
-            limit: 20,
-            next: `https://pokeapi.co/api/v2/pokemon?limit=${20}`,
+            limit: 12,
+            next: `https://pokeapi.co/api/v2/pokemon?limit=${12}`,
             previous: "",
             count: 0,
             nPages: 0,
@@ -40,7 +40,7 @@ export default class PokeList extends Component {
                     next,
                     previous,
                     count,
-                    nPages: Math.ceil(count / this.state.limit)
+                    nPages: Math.ceil((count) / this.state.limit)
                 })
             })
         return pokemons;
@@ -55,7 +55,7 @@ export default class PokeList extends Component {
     }
 
     setPage(curPage) {
-        const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(curPage - 1) * this.state.limit}`
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=${this.state.limit}&offset=${(curPage - 1) * this.state.limit}`
         this.getPokemons(url)
         this.setState({
             curPage

@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Pokemon from '../models/Pokemon'
 import './styles/PokeDetails.css'
 import { useLocation, Link } from "react-router-dom";
-
-
-
-
+import PokeStats from "../components/PokeStats";
 
 const PokeDetails = props => {
     const [poke, setPoke] = useState({})
@@ -27,18 +24,19 @@ const PokeDetails = props => {
     }, [query])
 
 
-
     console.log(poke)
 
     return (
         <div className="container">
             {!isError ?
                 <>
-                    <Link to={`/PokeDetails?id=${poke.id - 1}`} className="circle-btn"><i className="fas fa-arrow-left"></i></Link>
-                    <div className="poke-content">
+                    {poke.id - 1 > 0 &&
+                        <Link to={`/PokeDetails?id=${poke.id - 1 > 898 && poke.id - 1 < 10001 ? 898 : poke.id - 1}`} className="circle-btn"><i className="fas fa-arrow-left"></i></Link>
+                    }<div className="poke-content">
                         <div className="poke-display">
-                            <img src={poke.sprite} alt={poke.name} />
+                            <img src={poke.sprite ? poke.sprite : require('../assets/not-found-icon-19.jpg')} alt={poke.name} />
                         </div>
+                        <PokeStats data={poke.stats} />
                         <div className="poke-details">
                             <table>
                                 <tbody>
@@ -66,7 +64,9 @@ const PokeDetails = props => {
                             </table>
                         </div>
                     </div>
-                    <Link to={`/PokeDetails?id=${poke.id + 1}`} className="circle-btn"><i className="fas fa-arrow-right"></i></Link>
+                    {poke.id + 1 < 10220 &&
+                        <Link to={`/PokeDetails?id=${poke.id + 1 > 898 && poke.id + 1 < 10001 ? 10001 : poke.id + 1}`} className="circle-btn"><i className="fas fa-arrow-right"></i></Link>
+                    }
                 </>
                 : <div className="poke-content">
                     <h1>Pokemon Não encontrado</h1>

@@ -2,18 +2,21 @@
 .poke-content{
     margin: 50px 0px 50px;
     display: flex;
-    grid-column-start:2;
-    justify-content: center;
-    padding: 50px;
+    justify-content: space-evenly;
+    /* padding: 50px 0px 50px 50px; */
+    width: 800px;
     background-color:#FFCB05 ;
     border: #3D7DCA solid 5px;
     border-radius: 5px;
     align-items: flex-start;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
 
 .poke-display{
-    width: 250px;
-    height:250px;
+    margin-top: 20px;
+    width: 200px;
+    height:200px;
     background-color: #f0f0f0;
     border: #222224 solid 5px;
     border-radius: 50%;
@@ -34,6 +37,7 @@
     font-size: 20px;
     -webkit-font-smoothing: none;
     font-family: 'pokemon-font', monospace;
+    width: 500px;
 }
 
 .poke-details tr{
